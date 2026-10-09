@@ -1,0 +1,18 @@
+# Home-server deployment. Build the web app first (see deploy/README.md):
+#   flutter build web --release
+services:
+  web:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+    ports:
+      - "8085:80"
+    depends_on: [api]
+    restart: unless-stopped
+  api:
+    build: ./server
+    volumes:
+      - morphcook-data:/data
+    restart: unless-stopped
+volumes:
+  morphcook-data:

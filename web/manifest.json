@@ -1,0 +1,11 @@
+{
+  "name": "MorphCook",
+  "short_name": "MorphCook",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "description": "MorphCook - the same dish exists for every body.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false
+}

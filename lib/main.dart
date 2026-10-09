@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'data/app_state.dart';
 import 'data/corpus.dart';
 import 'data/native_licenses.dart';
-import 'data/store.dart';
+import 'data/store_factory.dart';
 import 'ui/screens/home_screen.dart';
 import 'ui/screens/cookbook_screen.dart';
 import 'ui/screens/meal_plan_screen.dart';
@@ -35,7 +35,7 @@ class _MorphCookAppState extends State<MorphCookApp> {
   Future<AppState> _initialize() async {
     final corpus = CorpusRepository(bundle: rootBundle);
     await corpus.initialize();
-    final state = AppState(store: HiveStore(), corpus: corpus);
+    final state = AppState(store: createStore(), corpus: corpus);
     await state.load();
     return state;
   }
