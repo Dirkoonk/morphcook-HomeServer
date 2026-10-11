@@ -34,7 +34,7 @@ class RemoteStore implements PersistenceStore {
             body: body,
             headers: {
               if (contentType != null) 'Content-Type': contentType,
-            }.jsify()!,
+            }.jsify()! as JSObject,
           ),
         )
         .toDart;
